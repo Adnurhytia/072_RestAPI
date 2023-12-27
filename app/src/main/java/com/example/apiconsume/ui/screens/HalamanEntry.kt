@@ -22,9 +22,12 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.consumeapi.navigation.DestinasiNavigasi
 import com.example.consumeapi.ui.PenyediaViewModel
+import com.example.consumeapi.ui.TopAppBarKontak
+import com.example.consumeapi.ui.home.viewmodel.InsertUiEvent
+import com.example.consumeapi.ui.home.viewmodel.InsertUiState
 import com.example.consumeapi.ui.home.viewmodel.InsertViewModel
-import com.example.consumerestapi.navigation.DestinasiNavigasi
 
 import kotlinx.coroutines.launch
 
@@ -117,9 +120,9 @@ fun FormInputSiswa(
             singleLine = true
         )
         OutlinedTextField(
-            value = insertUiEvent.alamat,
-            onValueChange = { onValueChange(insertUiEvent.copy(alamat = it)) },
-            label = { Text("Alamat") },
+            value = insertUiEvent.email,
+            onValueChange = { onValueChange(insertUiEvent.copy(email = it)) },
+            label = { Text("Email") },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
