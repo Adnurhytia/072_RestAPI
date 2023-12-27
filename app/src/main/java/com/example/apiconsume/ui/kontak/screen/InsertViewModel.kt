@@ -9,6 +9,7 @@ import com.example.consumeapi.model.Kontak
 import com.example.consumeapi.repository.KontakRepository
 import com.example.consumeapi.ui.home.viewmodel.InsertUiEvent
 import com.example.consumeapi.ui.home.viewmodel.InsertUiState
+import com.example.consumeapi.ui.home.viewmodel.toInsertUiEvent
 import com.example.consumeapi.ui.home.viewmodel.toKontak
 import kotlinx.coroutines.launch
 
@@ -46,4 +47,8 @@ fun InsertUiEvent.toKontak(): Kontak = Kontak(
     nama = nama,
     alamat = email,
     nohp = nohp,
+)
+
+fun Kontak.toUiStateKontak(): InsertUiState = InsertUiState(
+    insertUiEvent = toInsertUiEvent(),
 )
