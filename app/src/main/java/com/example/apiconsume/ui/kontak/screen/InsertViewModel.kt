@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 class InsertViewModel(private val kontakRepository: KontakRepository) : ViewModel(){
     var insertKontakState by mutableStateOf(InsertUiState())
         private set
-    fun updateInsertKontakState(insertUiState: InsertUiState){
+    fun updateInsertKontakState(insertUiEvent: InsertUiEvent){
         insertKontakState = InsertUiState(insertUiEvent = insertUiEvent)
     }
 
