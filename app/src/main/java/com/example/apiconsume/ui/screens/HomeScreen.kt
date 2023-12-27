@@ -1,5 +1,7 @@
 package com.example.consumeapi.ui.screens
 
+import android.os.Build
+import androidx.annotation.RequiresExtension
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -21,15 +23,19 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.apiconsume.R
 import com.example.consumeapi.model.Kontak
 import com.example.consumeapi.navigation.DestinasiNavigasi
+import com.example.consumeapi.ui.PenyediaViewModel
+import com.example.consumeapi.ui.home.viewmodel.HomeViewModel
 import com.example.consumeapi.ui.home.viewmodel.KontakUIState
 
 @Composable
@@ -162,9 +168,13 @@ object DestinasiHome : DestinasiNavigasi {
     override val titleRes = "Kontak"
 }
 
+@RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 @Composable
 fun HomeScreen(
-
+    navigateToItemEntry: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Int) -> Unit = {},
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
 
 }
