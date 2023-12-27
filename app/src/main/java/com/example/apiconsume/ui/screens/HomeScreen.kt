@@ -24,11 +24,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.consumeapi.R
+import com.example.apiconsume.R
 import com.example.consumeapi.model.Kontak
 import com.example.consumeapi.navigation.DestinasiNavigasi
 import com.example.consumeapi.ui.home.viewmodel.KontakUIState
@@ -46,7 +45,10 @@ fun HomeStatus(
         is KontakUIState.Success -> KontakLayout(
             kontak = kontakUIState.kontak, modifier = modifier.fillMaxWidth(),
             onDetailClick = {
-                onDetailClick(it.id))
+                onDetailClick(it.id)
+            },
+            onDeleteClick = {
+                onDeleteClick(it)
             }
         )
         is KontakUIState.Error -> OnError(retryAction, modifier = modifier.fillMaxSize())
@@ -158,4 +160,5 @@ fun KontakCard(
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
     override val titleRes = "Kontak"
+
 }
