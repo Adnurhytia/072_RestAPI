@@ -1,4 +1,4 @@
-package com.example.consumeapi.ui.screens
+package com.example.apiconsume.ui.home.screen
 
 import android.os.Build
 import androidx.annotation.RequiresExtension

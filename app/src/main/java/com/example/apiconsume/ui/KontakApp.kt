@@ -1,9 +1,7 @@
 package com.example.consumeapi.ui
 
 import android.os.Build
-import android.text.style.IconMarginSpan
 import androidx.annotation.RequiresExtension
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -16,7 +14,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
@@ -27,7 +24,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.apiconsume.R
 import com.example.apiconsume.navigation.PengelolaHalaman
 import com.example.consumeapi.ui.home.viewmodel.HomeViewModel
-import com.example.consumeapi.ui.screens.HomeScreen
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 @OptIn(ExperimentalMaterial3Api::class)
