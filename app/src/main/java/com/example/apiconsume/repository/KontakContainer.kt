@@ -11,7 +11,7 @@ interface AppContainer {
 }
 
 class KontakContainer : AppContainer{
-    private val baseUrl = "http://10.0.2.2:3030/"
+    private val baseUrl = "http://10.0.2.2:3030"
     private val json = Json {ignoreUnknownKeys = true}
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))

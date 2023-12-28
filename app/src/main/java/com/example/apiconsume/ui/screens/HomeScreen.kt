@@ -12,19 +12,19 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Phone
-import androidx.compose.material3.AlertDialogDefaults.shape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -134,7 +134,7 @@ fun KontakLayout(
 fun KontakCard(
     kontak: Kontak,
     onDeleteClick: (Kontak) -> Unit = {},
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier,
@@ -146,7 +146,7 @@ fun KontakCard(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Row(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
             ) {
                 Text(
                     text = kontak.nama,
@@ -162,11 +162,23 @@ fun KontakCard(
                     style = MaterialTheme.typography.titleMedium
                 )
             }
-            Text(
-                text = kontak.alamat,
-                style = MaterialTheme.typography.titleMedium
-            )
+            Row(modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = kontak.email,
+                    style = MaterialTheme.typography.titleMedium
+                )
+                Spacer(Modifier.weight(1f))
+                IconButton(onClick = {onDeleteClick(kontak) }) {
+                    Icon(
+                        imageVector = Icons.Default.Delete,
+                        contentDescription = null,
+                    )
+                }
+            }
         }
+
     }
 }
 
